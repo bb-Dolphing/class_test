@@ -5,39 +5,88 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>인형뽑기 지옥에 빠지다</title>
 	<style>
-			@font-face {
-    font-family: 'Pretendard-Regular';
+@font-face {
+    font-family: 'Pretendard';
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
-    font-style: normal;}
-		body{width:1000px;margin: auto;line-height: 1.5;  background-color: lightyellow;}
-		h2{font-size: 2rem;
-			color: hotpink;}
-		p{color:rgb(100, 100, 100);}
+    font-style: normal;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif; 
+    margin: 0; 
+    padding: 0;
+}
+
+		div{width:70%; margin: auto;}
+		.bg-pic{padding-top: 20px; padding-bottom: 20px;}
+		h1{text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;}
+		h2{font-size: 40px;}
+		.mandoo{ filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white)}
+		p{color:white;font-size: 20px;line-height: 150%;}
 		a{font-weight:bold; 
 			font-size: 18px;}
-		img{size: 600px;}
+		img{width: 400px;}
 		.title{
-  color: green; /* 글씨 색 */
+  color: black;/* 글씨 색 */
    margin-top: 0px;
     margin-bottom: 0px;
 font-size: 60px;}
-section {
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: 16px;
-  padding: 80px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* 선 추가 */
-}
-
-header {
+.wrap{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  padding-top: 120px;
   text-align: center;
-  padding-bottom: 80px;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* 선 추가 */
+  padding-bottom: 120px;
+}
+.white{color: white;}
+.bg-pic{background:url(hell.jpg);background-attachment: fixed; background-size: cover}
+.bg-pic2 {
+    background: url(https://mblogthumb-phinf.pstatic.net/MjAyNDA1MjVfMTcx/MDAxNzE2NTk0OTkzNzM2.TljGtYXQVLxwtkN_Rz50AOmbLrMQbvT6UwJhxsX8lsog.-zx3XORZJu5LOH4kQNdBcega0Li74DXN1EOMm-OzlCcg.JPEG/SE-0b6de7aa-18d0-4651-ae4b-5a43c65e495b.jpg?type=w800);
+    background-attachment: fixed;
+    background-size: contain; /* 배경이 안 잘리게 */
+    background-position: center;
+    min-height: 800px; /* 섹션 크기 키우기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-wh {
+    background: rgba(255, 255, 255, 0.85); /* 반투명 흰색 */
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%; /* 너무 크지 않게 */
+    max-width: 800px; /* 화면이 커도 너무 넓어지지 않게 */
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* 이미지와 콘텐츠 사이 간격 */
+}
+
+.side-img {
+    width: 400px; /* 사이드 이미지 크기 */
+    height: auto;
+    filter: invert(100%);
+    opacity: 0.8;
+}
+
+.main-img {
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    max-width: 800px;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 .subtitle {
@@ -48,77 +97,177 @@ header {
   height: 60px; /* 원의 크기 조절 */
   font-size: 24px;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 50%;
-  background-color: green;
+  background-color: black;
 }
+.bg-black{background-color: black;}
+.txt-red{color: red;}
+.black{color:black;}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* 원하는 높이 조정 */
+}
+
+/*알고리즘 이미지*/
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* 원하는 높이로 조정 가능 */
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    transform: rotate(calc(var(--angle, 0deg))) scale(calc(var(--scale, 1))); /* 크기와 회전 */
+}
+.black{color: black;}
+
+.image1 { top: 10px; left: 20px; width: 120px; --angle: -10deg; --scale: 1.2; }
+.image2 { top: 80px; left: 150px; width: 100px; --angle: 15deg; --scale: 1; }
+.image3 { top: 30px; left: 300px; width: 150px; --angle: -5deg; --scale: 1.1; }
+.image4 { top: 150px; left: 50px; width: 90px; --angle: 20deg; --scale: 0.9; }
+.image5 { top: 200px; left: 250px; width: 130px; --angle: -15deg; --scale: 1.3; }
+.image6 { top: 50px; left: 500px; width: 110px; --angle: 5deg; --scale: 0.8; }
+.image7 { top: 220px; left: 400px; width: 140px; --angle: -8deg; --scale: 1.4; }
+.image8 { top: 100px; left: 600px; width: 120px; --angle: 10deg; --scale: 1.1; }
+/*알고리즘 이미지*/
+.bg-pic3{background: url(https://i.pinimg.com/originals/2b/6f/f7/2b6ff792481aff67055c8e95f80cee76.gif);
+	background-attachment: fixed; 
+	background-size: cover}
+.bg-pic4{background: url(bg_4.png);
+	background-attachment: fixed; 
+	background-size: cover}
+	.gemson{background: url(https://i.pinimg.com/736x/78/34/6a/78346acd9e95abebeef8fb4bfaec7435.jpg);
+	background-attachment: fixed; 
+	background-size: cover}
+	.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2단 배치 */
+    gap: 10px; /* 이미지 간격 */
+    max-width: 800px; /* 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    align-items: center; /* 세로 정렬 */
+}
+.media-container {
+    display: flex;
+    gap: 20px; /* 이미지랑 영상 사이 간격 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+}
+img{    border-radius: 10px; /* 둥근 모서리*/}
+video{border-radius: 10px;}
+.image-grid img {
+    width: 100%; /* 그리드 셀 크기에 맞추기 */
+    height: auto;
+    border-radius: 10px; /* 둥근 모서리*/
+}
+.white{color: white;}
 
 		img{align-content: center;}
 	</style>
 </head>
 <body>
 	<nav></nav>
-	<header>
+	<header class="bg-pic">
+		<div class="wrap">
 				<a class="subtitle">인형뽑기 일대기</a>
 		<h1 class="title">인형뽑기 지옥에 빠지다</h1>
-		<img src="https://pbs.twimg.com/media/GW2noLbaAAIu7Nv.png" width="200px">
+		<img class="mandoo" src="https://pbs.twimg.com/media/GW2noLbaAAIu7Nv.png" width="200px">
+	</div>
 	</header>
-	<section>
-		<h2>"인형뽑기? 절대 안 해."</h2>
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhiIKiQPWGuLJTkIubVm_wIIfSocTAYF4S-Q&s">
+	<section class="bg-black">
+		<div class="wrap">
+		<h2 class="txt-red">인형뽑기? 절대 안 해.</h2>
+		<img src="https://i.pinimg.com/736x/fa/d5/25/fad525e9e802fe24ed596d1545fe2198.jpg">
 		<p>나는 원래 인형뽑기에 손도 안 대겠다고 다짐했었다. <br>
 		왜냐하면... 나는 도파민 중독자니까. 도박 같은 거 하면 파산할 각이다.<br>
-		게다가 난 인형뽑기를 못하기도 했다.</p>
+		<br>
+		<i><u><p>게다가 난 거.지.다.</p></u></i>
+	</div>
 	</section>
-	<section>
-		<h2>"못지나치겠어요…."</h2>
-		<img src="https://mblogthumb-phinf.pstatic.net/MjAyNDA1MTBfMjc3/MDAxNzE1MzI0MzY2Nzc5.GC-hFZML5LYvvfUC4JPHRUxrFBqtfIUG9kXhjx7HSjIg.gu-9E_koCPqQJQ52eizTl4Ytd_JzlwnwnNFpWwlMuHgg.JPEG/IMG_5944.JPG?type=w800">
-		<p>
+	<section class="bg-pic2">
+				<div class="wrap bg-wh">
+		<h2 class="black">못지나치겠어요….</h2>
+		<p class="black">
 		빤짝빤짝 빛나는 인형뽑기 가게들…자신을 데려가달라며 눈을 빤짝이는 아이들…<br>
 		주변에 인형뽑기 하는 사람이 점점 많아지기 시작... 나도 모르게 관심이 가기 시작했다.
 		</p>
 	</section>
-	<section>
-		<h2>"홍대에서 첫도전... 그리고 처참한 실패."</h2>
-		<img src="https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/200910/30/newsen/20091030083117894.jpg" width="800px;">
-		<p>
-		홍대에서 친구와 한 번 도전해봤다. 하지만 결과는? 참혹한 실패.<br>
-		"아, 이건 진짜 내 길이 아니다. 다시는 안 한다." 그렇게 다짐했는데…
-		</p>
-	</section>
-	<section>
-		<h2>"알고리즘이 날 타락시켰다."</h2>
-		<img src="tarak.PNG"width="400px;">
+</div>
+<section class="bg-black flex-container">
+    <img src="https://i.pinimg.com/736x/6f/b5/81/6fb5813dcd29352951bb2f5eddc68302.jpg" class="side-img">
+    <div class="content">
+        <h2 class="txt-red">홍대에서 첫도전... 그리고 처참한 실패.</h2>
+        <img src="https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/200910/30/newsen/20091030083117894.jpg" class="main-img">
+        <p>
+            홍대에서 친구와 한 번 도전해봤다. 하지만 결과는? 참혹한 실패.<br>
+            "아, 이건 진짜 내 길이 아니다. 다시는 안 한다." 그렇게 다짐했는데…
+        </p>
+    </div>
+    <img src="https://i.pinimg.com/736x/60/68/96/6068961d5bf920f0077856b0f3932a43.jpg" class="side-img">
+</section>
+
+</div>
+	<section class="bg-pic3">
+				<div class="wrap">
+		<h2 class="white">알고리즘이 날 타락시켰다</h2>
+<div class="image-container">
+    <img src="1.png" class="image1">
+    <img src="2.png" class="image2">
+    <img src="3.png" class="image3">
+    <img src="4.png" class="image4">
+    <img src="5.png" class="image5">
+    <img src="6.png" class="image6">
+    <img src="7.png" class="image7">
+    <img src="8.png" class="image8">
+</div>
 		<p>
 		SNS 알고리즘이 갑자기 인형뽑기 영상들을 쏟아내기 시작했다.<br>
 		처음엔 그냥 보다가, 어느 순간 "어...? 이거 이렇게 하면 뽑히는 거 아냐?" 라는 감이 잡히기 시작한 거다.
 		</p>
 	</section>
-	<section>
+</div>
+	<section class="gemson">
+				<div class="wrap">
 		<h2>"그리고 첫 성공...!"</h2>
 		<img src="firstsunggong.JPG" width="800px;">
-		<p>
+		<p class="black">
 		한 번 해보자는 마음으로 멀리 있는 인형을 노려봤다. 그런데...? 웬열?! 인형이 진짜 뽑혔다!!!🔥🔥🔥 <br>그 순간 희열이 미쳤다. 손이 떨리고, 심장이 쿵쾅거리고, "이 맛에 하는 거구나...!"
 	</p>
+	</div>
 	</section>
-	<section>
-		<h2>"그렇게 나는 인형뽑기 지옥에 빠졌다."</h2>
-		<img src="jungdok.JPG"width="800px;">
-		<p>
-		이제 인형뽑기 가게만 있으면 못지나치는 나.<br>
-		친구들도 인형뽑기 잘한다며 옆에서 감탄하기 시작했다.
-		</p>
-	</section>
-	<section>
-		<h2>"이제 멈출 수 있을까?"</h2>
-		<img src="sakuya.jpg" width="800px;">
-		<p>
-		가방에 인형뽑기 전리품을 주렁주렁 달고 다닌다.<br>
-		뿌듯하지만 돈을 훅훅 써버리는 나는 이 늪에서 빠져나올 수 있을까...? 
-		</p>
-	</section>
-	<footer>
-		<p><i>To be continue…</i></p>
+<section class="bg-black">
+    <div class="wrap">
+        <h2 class="txt-red">그렇게 나는 인형뽑기 지옥에 빠졌다.</h2>
+        <div class="media-container">
+            <img src="jungdok.JPG" height="600px">
+            <video controls height="600px">
+                <source src="bbobgi1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p>
+            이제 인형뽑기 가게만 있으면 못지나치는 나.<br>
+            친구들도 인형뽑기 잘한다며 옆에서 감탄하기 시작했다.
+        </p>
+    </div>
+</section>
+<section class="bg-pic4">
+    <div class="wrap">
+        <h2 class="white">이제 멈출 수 있을까?</h2>
+        <div class="image-grid">
+            <img src="sakuya1.jpg">
+            <img src="sakuya2.jpg">
+        </div>
+        <p>
+            가방에 인형뽑기 전리품을 주렁주렁 달고 다닌다.<br>
+            뿌듯하지만 돈을 훅훅 써버리는 나는 이 늪에서 빠져나올 수 있을까...? 
+        </p>
+    </div>
+</section>
+	<footer class="black">
+		<p class="black">©2025 박진아 All Rights Reserved.</p>
 	</footer>
 </body>
 </html>
